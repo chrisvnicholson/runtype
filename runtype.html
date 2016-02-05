@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+<div id="myTypingText"></div>
+<script type="text/javascript" language="javascript">
+
+var myString = prompt('Say what you want to see typed, and add a @ sign where you want it to pause','Right here, baby'); //prompts are annoying, i know
+//var myDelay = prompt('Type speed (try 50)', 'The higher the number, the slower it types');
+var myBreath = prompt('Now tell me how long to pause at each breath (shift+2)', 'Try 300')
+var myArray = myString.split("");
+var loopTimer;
+
+function printLooper(){
+  if(myArray.length > 0 ){
+      var char = myArray.shift();
+      if ( char === '@'){
+          document.getElementById("myTypingText").innerHTML
+      }else {
+      document.getElementById("myTypingText").innerHTML += char;
+      }
+  } else {
+    clearTimeout(loopTimer);
+  }
+  if (char === ' '){
+  loopTimer = setTimeout('printLooper()', 20);
+  } else if (char === ',' || char === '.' || char === '?') {
+  loopTimer = setTimeout('printLooper()', 220); //fiddle with these 2nd params as you see fit
+  } else if (char === '@'){
+  loopTimer = setTimeout('printLooper()', myBreath);
+  } else {
+  loopTimer = setTimeout('printLooper()', 47);
+  }
+}
+printLooper(); 
+
+</script>
+</body>
+</html>
