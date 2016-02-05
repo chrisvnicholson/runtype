@@ -1,0 +1,1 @@
+This is a Javascript typewriter that allows people to add "breath" to what they write. The intent was to give written poetry the rhythm of the spoken word. Just download the HTML file, open it in your browser, and it will type out a message for you with the "breath" you added. Improvements welcome. :)
